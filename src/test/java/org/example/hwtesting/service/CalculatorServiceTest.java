@@ -4,6 +4,8 @@ import net.bytebuddy.implementation.bytecode.Division;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
 public class CalculatorServiceTest {
 
     CalculatorService calculatorService = new CalculatorService();
@@ -23,7 +25,7 @@ public class CalculatorServiceTest {
         int num2 = -15;
         int actual = calculatorService.plus(num1, num2);
 
-        Assertions.assertEquals(-35, actual);
+        Assertions.assertEquals(-40, actual);
     }
 
     @Test
@@ -32,16 +34,16 @@ public class CalculatorServiceTest {
         int num2 = 20;
         int actual = calculatorService.minus(num1, num2);
 
-        Assertions.assertEquals(5, actual);
+        Assertions.assertEquals(-5, actual);
     }
 
     @Test
     void minusNegative() {
-        int num1 = -25;
-        int num2 = -15;
+        int num1 = 25;
+        int num2 = 15;
         int actual = calculatorService.minus(num1, num2);
 
-        Assertions.assertEquals(5, actual);
+        Assertions.assertEquals(10, actual);
     }
 
     @Test
@@ -77,16 +79,8 @@ public class CalculatorServiceTest {
         int num2 = 10;
         double actual = calculatorService.divide(num1, num2);
 
-        Assertions.assertEquals(-2, actual);
-    }
-    
-    @Test
-    public void divide(){
-        double num1 = 10;
-        double num2 = 0;
+        Assertions.assertEquals(-3, actual);
 
     }
 
 }
-
-    

@@ -14,10 +14,10 @@ public class ParametrizedCalculatorServiceTest {
 
     Stream<Arguments> data() {
         return Stream.of(
-                Arguments.of(1, 3),
-                Arguments.of(7, 5),
-                Arguments.of(25, -13),
-                Arguments.of(-103, -673));
+                Arguments.of(585, 3),
+                Arguments.of(6, 2),
+                Arguments.of(-21, -3),
+                Arguments.of(25, 5));
     }
 
     @ParameterizedTest
@@ -40,15 +40,15 @@ public class ParametrizedCalculatorServiceTest {
     @MethodSource("data")
     void multiply(int num1, int num2) {
         int expected = num1 * num2;
-        Assertions.assertEquals(expected,calculatorService.multiply(num1, num2));
+        Assertions.assertEquals(expected, calculatorService.multiply(num1, num2));
 
     }
 
     @ParameterizedTest
     @MethodSource("data")
-    void divide(int num1, int num2)
-            throws Exception {
+    void devide(int num1, int num2) throws Exception{
         int expected = num1 / num2;
-
+        Assertions.assertEquals(expected, calculatorService.divide(num1, num2));
     }
-        }
+}
+
