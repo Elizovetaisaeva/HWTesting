@@ -82,5 +82,4 @@ public class CalculatorServiceTest {
         Assertions.assertEquals(-3, actual);
 
     }
-
 }
